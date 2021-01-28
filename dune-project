@@ -13,8 +13,13 @@
  (description "TODO ")
  (depends
   (dune (> 2.7))
-  (alcotest :with-test)
-   bos
-   ppx_deriving
-   kwdcmd                       ; TODO add as pin dep
-))
+  (bos (>= 0.2.0))
+  (ppx_deriving (>= 4.5))
+  (ppx_deriving_yojson (>= 3.6.1))
+
+   ; pinned
+   kwdcmd
+  (curly (>= 0.2.0))
+
+  ; test deps
+  (alcotest :with-test)))
