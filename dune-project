@@ -17,9 +17,11 @@
   (ppx_deriving (>= 4.5))
   (ppx_deriving_yojson (>= 3.6.1))
 
+  (curly (>= 0.2.0))
+  (re (>= 1.9.0))
+
    ; pinned
    kwdcmd
-  (curly (>= 0.2.0))
 
   ; test deps
   (alcotest :with-test)))

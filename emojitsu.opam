@@ -10,8 +10,9 @@ depends: [
   "bos" {>= "0.2.0"}
   "ppx_deriving" {>= "4.5"}
   "ppx_deriving_yojson" {>= "3.6.1"}
-  "kwdcmd"
   "curly" {>= "0.2.0"}
+  "re" {>= "1.9.0"}
+  "kwdcmd"
   "alcotest" {with-test}
   "odoc" {with-doc}
 ]
