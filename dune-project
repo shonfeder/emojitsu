@@ -16,6 +16,7 @@
   (bos (>= 0.2.0))
   (ppx_deriving (>= 4.5))
   (ppx_deriving_yojson (>= 3.6.1))
+  (ppx_jane (>= v0.14.0))
 
   (curly (>= 0.2.0))
   (re (>= 1.9.0))
