@@ -5,24 +5,36 @@
 ; (source (github mirage/ocaml-cohttp))
 (license MIT)
 (authors "Shon Feder")
-(maintainers "TODO")
+(maintainers "shon.feder@gmail.com")
 
 (package
  (name emojitsu)
  (synopsis "Emoji utilities")
- (description "TODO ")
- (depends
-  (dune (> 2.7))
-  (bos (>= 0.2.0))
-  (ppx_deriving (>= 4.5))
-  (ppx_deriving_yojson (>= 3.6.1))
-  (ppx_jane (>= v0.14.0))
+ (description "A library and executable of techniques for dealing with unicode emoji.
 
+Currently supports:
+
+- look up emoji unicode by (GitHub) name
+- look up emoji (GitHub) names by unicode
+- replace all (GitHub) names in a file with the corresponding unicode ")
+ (depends
+  ; build
+  (dune (> 2.7))
+  
+  ; dev
   (curly (>= 0.2.0))
+  (uutf (>= 1.0.2))
+
+  ; libs
+  (bos (>= 0.2.0))
   (re (>= 1.9.0))
 
+  ; preprocessors
+  (ppx_deriving (>= 4.5))          ; rm?
+  (ppx_jane (>= v0.14.0))          ; rm?
+
    ; pinned
-   kwdcmd
+  kwdcmd
 
   ; test deps
   (alcotest :with-test)))
