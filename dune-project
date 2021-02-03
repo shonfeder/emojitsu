@@ -34,7 +34,5 @@ Currently supports:
   (ppx_jane (>= v0.14.0))          ; rm?
 
    ; pinned
-  kwdcmd
-
-  ; test deps
-  (alcotest :with-test)))
+  kwdcmd))
+(using mdx 0.1)

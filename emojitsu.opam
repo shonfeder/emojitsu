@@ -21,7 +21,6 @@ depends: [
   "ppx_deriving" {>= "4.5"}
   "ppx_jane" {>= "v0.14.0"}
   "kwdcmd"
-  "alcotest" {with-test}
   "odoc" {with-doc}
 ]
 build: [
