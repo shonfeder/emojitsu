@@ -19,13 +19,19 @@ let () =
           ~name:"emojify"
           ~doc:
             "Replace all names of the form :emoji_name: with the corresponding \
-             unicode in the given file"
-      @@ let+ name =
-           Required.pos
+             unicode"
+      @@ let+ file =
+           Optional.pos
              "FILE"
+             ~doc:"File to read text from. If absent, read from stdout."
              ~conv:Arg.(conv (Fpath.of_string, Fpath.pp))
              ~nth:0
              ()
+         and+ inplace =
+           Optional.flag
+             ~flags:[ "i"; "inplace" ]
+             ~doc:"Emojify the input file in place."
+             ()
          in
-         Lib.Github.emojify name )
+         Lib.Github.emojify inplace file )
     ]
