@@ -1,0 +1,7 @@
+#+TITLE: Emoji
+
+Representation of Emoji.
+
+This needs to be it's own component to avoid a circular dependency between
+=lib= and the =gen=, since we generate components of the =lib= which are
+coordinated through the type Emoji.t.

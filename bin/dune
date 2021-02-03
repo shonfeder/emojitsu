@@ -1,0 +1,4 @@
+(executable
+ (public_name emojitsu)
+ (name main)
+ (libraries lib kwdcmd bos))

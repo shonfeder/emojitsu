@@ -1,0 +1,5 @@
+(library
+ (name emoji)
+ (libraries bos ppx_deriving.runtime)
+ (preprocess
+  (pps ppx_inline_test ppx_deriving.show)))

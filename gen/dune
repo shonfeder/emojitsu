@@ -1,0 +1,4 @@
+(executable
+ (public_name gen_github_emoji)
+ (libraries   emoji re curly yojson uutf kwdcmd)
+ (preprocess (pps ppx_string)))
