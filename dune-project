@@ -1,8 +1,10 @@
 (lang dune 2.7)
 (name emojitsu)
+(version 0.0.1)
+
 (generate_opam_files true)
 
-; (source (github mirage/ocaml-cohttp))
+(source (github shonfeder/emojitsu))
 (license MIT)
 (authors "Shon Feder")
 (maintainers "shon.feder@gmail.com")
