@@ -1,0 +1,7 @@
+(test
+ (name emojitsu)
+ (libraries bos))
+
+(mdx
+ (files integration.md)
+ (packages emojitsu))
