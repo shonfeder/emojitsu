@@ -6,6 +6,7 @@ _Tiny executable techniques for dealing with emoji_
 **Table of Contents**
 
 - [Emojitsu](#emojitsu)
+    - [Installation](#installation)
     - [CLI Usage](#cli-usage)
         - [Overview](#overview)
         - [Examples](#examples)
@@ -20,6 +21,19 @@ _Tiny executable techniques for dealing with emoji_
 **NOTE**: Emojitsu currently only supports name <-> unicode conversions for emoji
 supported by GitHub. But there is no reason it should stay so confined, if we
 find we need other features.
+
+## Installation
+
+Using [opam](https://opam.ocaml.org/doc/Install.html):
+
+<!-- $MDX skip -->
+``` sh
+$ opam pin https://github.com/shonfeder/emojitsu.git#0.0.1
+```
+
+For Linux with x86 architecture, there is also a portable executable in the
+[releases](https://github.com/shonfeder/emojitsu/releases). This is intended for
+use in CI.
 
 ## CLI Usage
 
