@@ -14,8 +14,8 @@ authors: ["Shon Feder"]
 license: "MIT"
 depends: [
   "dune" {>= "2.7" & > "2.7"}
-  "curly" {>= "0.2.0"}
-  "uutf" {>= "1.0.2"}
+  "curly" {with-test & >= "0.2.0"}
+  "uutf" {with-test & >= "1.0.2"}
   "bos" {>= "0.2.0"}
   "re" {>= "1.9.0"}
   "ppx_deriving" {>= "4.5"}

@@ -22,17 +22,17 @@ Currently supports:
   (dune (> 2.7))
   
   ; dev
-  (curly (>= 0.2.0))
-  (uutf (>= 1.0.2))
+  (curly (and :with-test (>= 0.2.0)))
+  (uutf (and :with-test (>= 1.0.2)))
 
   ; libs
   (bos (>= 0.2.0))
   (re (>= 1.9.0))
 
   ; preprocessors
-  (ppx_deriving (>= 4.5))          ; rm?
-  (ppx_jane (>= v0.14.0))          ; rm?
+  (ppx_deriving (>= 4.5))
+  (ppx_jane (>= v0.14.0))
 
-   ; pinned
+   ; pinned, see ./emojitsu.opam.template
   kwdcmd))
 (using mdx 0.1)
