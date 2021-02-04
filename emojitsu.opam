@@ -38,5 +38,5 @@ build: [
   ]
 ]
 pin-depends: [
-  [ "kwdcmd.dev" "../kwdcmd" ]
+  [ "kwdcmd.dev" "git+https://github.com/shonfeder/kwdcmd.git#b7bc9f1c2a5f9babc2dc0603c298b116f8f8ee31" ]
 ]
