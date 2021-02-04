@@ -25,8 +25,7 @@ let ( let* ) = Result.bind
 
 let emoji_name_re =
   let open Re in
-  seq [char ':'; group (rep1 wordc); char ':']
-  |> compile
+  seq [ char ':'; group (rep1 wordc); char ':' ] |> compile
 
 let replace_emoji_names str =
   let f group =
@@ -64,10 +63,10 @@ let%expect_test "emoji name regex" =
   check "foo bar :woman_scientist:";
   [%expect {| foo bar 👩‍🔬 |}];
   (* Replace contiguous names *)
-  check ":woman_student::woman_teacher::woman_scientist:" ;
+  check ":woman_student::woman_teacher::woman_scientist:";
   [%expect {| 👩‍🎓👩‍🏫👩‍🔬 |}];
   (* Replace separated names *)
-  check ":woman_student: :woman_teacher:\t:woman_scientist:" ;
+  check ":woman_student: :woman_teacher:\t:woman_scientist:";
   [%expect {| 👩‍🎓 👩‍🏫	👩‍🔬 |}];
   (* don't replace emoji in words that has no boundaries *)
   check "foo:woman:bar";
