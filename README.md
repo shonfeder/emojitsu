@@ -7,14 +7,23 @@ _Tiny executable techniques for dealing with emoji_
 
 - [Emojitsu](#emojitsu)
     - [CLI Usage](#cli-usage)
+        - [Overview](#overview)
         - [Examples](#examples)
             - [Emojify file contents to stdout](#emojify-file-contents-to-stdout)
-            - [Emojify a file in place:](#emojify-a-file-in-place)
+            - [Emojify a file in place](#emojify-a-file-in-place)
             - [Emojify from stdin](#emojify-from-stdin)
+            - [Look up the unicode emoji for a (GitHub) name](#look-up-the-unicode-emoji-for-a-github-name)
+            - [Look up the (GitHub) name for an emoji](#look-up-the-github-name-for-an-emoji)
 
 <!-- markdown-toc end -->
 
+**NOTE**: Emojitsu currently only supports name <-> unicode conversions for emoji
+supported by GitHub. But there is no reason it should stay so confined, if we
+find we need other features.
+
 ## CLI Usage
+
+### Overview
 
 ```sh
 $ emojitsu --help=plain
@@ -68,7 +77,7 @@ $ emojitsu emojify ./emoji-names-example.md
 
 ```
 
-#### Emojify a file in place:
+#### Emojify a file in place
 
 ```sh
 $ emojitsu emojify --inplace ./emoji-names-example.md && cat ./emoji-names-example.md
@@ -82,4 +91,18 @@ $ emojitsu emojify --inplace ./emoji-names-example.md && cat ./emoji-names-examp
 ```sh
 $ echo :fist: | emojitsu emojify
 ✊
+```
+
+#### Look up the unicode emoji for a (GitHub) name
+
+```sh
+$ emojitsu find-unicode black_flag
+🏴
+```
+
+#### Look up the (GitHub) name for an emoji
+
+```sh
+$ emojitsu find-name ☮
+peace_symbol
 ```
