@@ -76,8 +76,11 @@ let run arg =
     let table_str = fetch_json () |> make_table |> Emoji.show_table in
     "let v = " ^ table_str
   in
+  let contents =
+    String.concat "\n" [ {|(** WARNING: THIS FILE IS GENERATED *)|}; ""; decl ]
+  in
   match arg with
-  | Some fpath -> Bos.OS.File.write fpath decl
+  | Some fpath -> Bos.OS.File.write fpath contents
   | None       -> Ok (print_endline decl)
 
 let () =

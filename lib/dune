@@ -5,7 +5,13 @@
  (preprocess
   (pps ppx_expect ppx_inline_test ppx_deriving.show)))
 
+; The "pickled" GitHub emoji dictionary, that can be promoted into the lib
 (rule
- (targets github_table.ml)
+ (alias runtest)
+ (action (diff github_table.ml github_table.ml.gen)))
+
+; Generate the "pickled" GitHub emoji dictionary
+(rule
+ (targets github_table.ml.gen)
  (deps    (:gen ../gen/gen_github_emoji.exe))
  (action  (run %{gen} %{targets})))
