@@ -9,19 +9,9 @@ let name_to_unicode name = EmojiMap.Key.find_opt name emap
 
 let unicode_to_name unicode = EmojiMap.Val.find_opt unicode emap
 
-(* Entry points *)
-
 let lookup ~f needle =
   f needle
   |> Option.to_result ~none:Rresult.R.(msgf "No entry found for %s" needle)
-
-let lookup_name unicode =
-  lookup ~f:unicode_to_name unicode |> Result.map print_endline
-
-let lookup_unicode name =
-  lookup ~f:name_to_unicode name |> Result.map print_endline
-
-let ( let* ) = Result.bind
 
 let emoji_name_re =
   let open Re in
@@ -86,6 +76,14 @@ let emojify_file file = file |> OS.File.read |> Result.map replace_emoji_names
 let emojify_to_stdout file = emojify_file file |> Result.map print_endline
 
 let emojify_inplace file = emojify_file file >>= OS.File.write file
+
+(** {2 CLI entrypoints} *)
+
+let lookup_name unicode =
+  lookup ~f:unicode_to_name unicode |> Result.map print_endline
+
+let lookup_unicode name =
+  lookup ~f:name_to_unicode name |> Result.map print_endline
 
 let emojify inplace = function
   | None      -> emojify_stdin ()
