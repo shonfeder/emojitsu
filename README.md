@@ -1,6 +1,6 @@
 # Emojitsu
 
-_A library and executable of techniques for dealing with unicode emoji_
+_Tiny executable techniques for dealing with emoji_
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**

@@ -11,14 +11,14 @@
 
 (package
  (name emojitsu)
- (synopsis "Emoji utilities")
- (description "A library and executable of techniques for dealing with unicode emoji.
+ (synopsis "Tiny executable techniques for dealing with emoji")
+ (description "A utility for convering to and from emoji names and unicode.
 
 Currently supports:
 
 - look up emoji unicode by (GitHub) name
 - look up emoji (GitHub) names by unicode
-- replace all (GitHub) names in a file with the corresponding unicode ")
+- replace all (GitHub) names in a file (or stdin) with the corresponding unicode ")
  (depends
   ; build
   (dune (> 2.7))
