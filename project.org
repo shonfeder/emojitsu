@@ -1,0 +1,24 @@
+#+TITLE: Project
+
+* NOTES
+
+** Generating the emoji dictionary
+We currently generate a hard-coded emoji dictionary from making a single call to
+the GitHub emoji API. See [[file:gen/gen_github_emoji.ml][gen/gen_github_emoji.ml]] and [[file:lib/dune][lib/dune]] for the
+implementation.
+
+To generate the dictionary afresh, run
+
+#+begin_src sh
+dune clean
+dune test
+dune promote
+#+end_src
+* TODO Don't hardcode the emoji, work from loading json files
+* TODO Generalize
+Use a json mappings to provide an extensible, bi-directional string substitution
+utility
+* References
+** https://unicode.org/emoji/charts/index.html
+* Alternate names
+- emoemoji
