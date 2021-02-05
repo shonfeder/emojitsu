@@ -1,3 +1,7 @@
+## 0.0.5 (2020-02-04)
+
+- Remove `gen_github_emoji` as public executable
+
 ## 0.0.4 (2020-02-04)
 
 - Add missing opam file
