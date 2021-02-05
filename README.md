@@ -28,7 +28,7 @@ Using [opam](https://opam.ocaml.org/doc/Install.html):
 
 <!-- $MDX skip -->
 ```sh
-$ opam pin https://github.com/shonfeder/emojitsu.git#0.0.2
+$ opam pin https://github.com/shonfeder/emojitsu.git#0.0.3
 ```
 
 For Linux with x86 architecture, there is also a portable executable in the
