@@ -33,7 +33,7 @@ Currently supports:
   (yojson (and (>= 1.7.0) (< 1.8.0)))
 
   ; preprocessors
-  (ppx_deriving (and (>= 4.5) (< 4.6)))
+  (ppx_deriving (and (>= 5.1) (< 6.0)))
   (ppx_expect (and (>= v0.14.0) (< v0.15.0)))
   (ppx_inline_test (and (>= v0.14.0) (< v0.15.0)))
   (ppx_string (and (>= v0.14.0) (< v0.15.0)))
