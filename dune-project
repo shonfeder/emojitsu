@@ -29,7 +29,7 @@ Currently supports:
 
   ; libs
   (bos (and (>= 0.2.0) (< 0.3.0)))
-  (re (and (>= 1.9.0) (< 1.2.0)))
+  (re (and (>= 1.9.0) (< 1.10.0)))
   (yojson (and (>= 1.7.0) (< 1.8.0)))
 
   ; preprocessors
