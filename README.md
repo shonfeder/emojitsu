@@ -27,7 +27,7 @@ find we need other features.
 Using [opam](https://opam.ocaml.org/doc/Install.html):
 
 <!-- $MDX skip -->
-``` sh
+```sh
 $ opam pin https://github.com/shonfeder/emojitsu.git#0.0.1
 ```
 
