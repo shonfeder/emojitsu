@@ -23,7 +23,9 @@ depends: [
   "re" {>= "1.9.0" & < "1.2.0"}
   "yojson" {>= "1.7.0" & < "1.8.0"}
   "ppx_deriving" {>= "4.5" & < "4.6"}
-  "ppx_jane" {>= "v0.14.0" & < "v0.15.0"}
+  "ppx_expect" {>= "v0.14.0" & < "v0.15.0"}
+  "ppx_inline_test" {>= "v0.14.0" & < "v0.15.0"}
+  "ppx_string" {>= "v0.14.0" & < "v0.15.0"}
   "kwdcmd"
   "odoc" {with-doc}
 ]

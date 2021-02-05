@@ -30,7 +30,9 @@ Currently supports:
 
   ; preprocessors
   (ppx_deriving (and (>= 4.5) (< 4.6)))
-  (ppx_jane (and (>= v0.14.0) (< v0.15.0)))
+  (ppx_expect (and (>= v0.14.0) (< v0.15.0)))
+  (ppx_inline_test (and (>= v0.14.0) (< v0.15.0)))
+  (ppx_string (and (>= v0.14.0) (< v0.15.0)))
 
    ; pinned, see ./emojitsu.opam.template
   kwdcmd))
