@@ -19,10 +19,11 @@ depends: [
   "dune" {>= "2.7" & > "2.7"}
   "curly" {with-test & >= "0.2.0"}
   "uutf" {with-test & >= "1.0.2"}
-  "bos" {>= "0.2.0"}
-  "re" {>= "1.9.0"}
-  "ppx_deriving" {>= "4.5"}
-  "ppx_jane" {>= "v0.14.0"}
+  "bos" {>= "0.2.0" & < "0.3.0"}
+  "re" {>= "1.9.0" & < "1.2.0"}
+  "yojson" {>= "1.7.0" & < "1.8.0"}
+  "ppx_deriving" {>= "4.5" & < "4.6"}
+  "ppx_jane" {>= "v0.14.0" & < "v0.15.0"}
   "kwdcmd"
   "odoc" {with-doc}
 ]
