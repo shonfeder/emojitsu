@@ -1,3 +1,7 @@
+## 0.0.4 (2020-02-04)
+
+- Add missing opam file
+
 ## 0.0.3 (2020-02-04)
 
 - Fix version constraint on re dependency
