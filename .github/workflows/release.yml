@@ -64,6 +64,6 @@ jobs:
 
           hub release create $version \
             -a "_build/emojitsu-${version}.tbz" \
-            -a ./gh-actions-emojitsu \
+            -a gh-actions-emojitsu \
             -m "$version"
             -m $(git tag -l --format='%(contents)' "$version" | tail -n +3)
