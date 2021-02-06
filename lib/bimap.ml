@@ -1,43 +1,75 @@
-module StringMap = Map.Make (String)
+(** A bidirecitonal map between As and Bs *)
+module type S = sig
+  type t
 
-module Make (Key : Map.OrderedType) (Val : Map.OrderedType) = struct
-  type key = Key.t
+  module A : sig
+    type key
+  end
 
-  type val_ = Val.t
+  module B : sig
+    type key
+  end
 
-  module KeyMap = Map.Make (Key)
-  module ValMap = Map.Make (Val)
+  val empty : t
 
-  type keymap = val_ KeyMap.t
+  val is_empty : t -> bool
 
-  type valmap = key ValMap.t
+  val add : A.key -> B.key -> t -> t
+
+  module FromA : sig
+    val mem : A.key -> t -> bool
+
+    val find_opt : A.key -> t -> B.key option
+  end
+
+  module FromB : sig
+    val mem : B.key -> t -> bool
+
+    val find_opt : B.key -> t -> A.key option
+  end
+end
+
+module Make (As : Map.OrderedType) (Bs : Map.OrderedType) :
+  S with type A.key = As.t and type B.key = Bs.t = struct
+  module A = struct
+    include Map.Make (As)
+
+    type nonrec t = Bs.t t
+  end
+
+  module B = struct
+    include Map.Make (Bs)
+
+    type nonrec t = A.key t
+  end
 
   type t =
-    { k : keymap
-    ; v : valmap
+    { a : A.t
+    ; b : B.t
     }
 
-  let empty : t = { k = KeyMap.empty; v = ValMap.empty }
+  let empty : t = { a = A.empty; b = B.empty }
 
-  let cardinal : t -> int = fun t -> KeyMap.cardinal t.k
+  let cardinal : t -> int = fun t -> A.cardinal t.a
 
   let is_empty t = cardinal t = 0
 
-  let add : k:key -> v:val_ -> t -> t =
-   fun ~k ~v t -> { k = KeyMap.add k v t.k; v = ValMap.add v k t.v }
+  let add : A.key -> B.key -> t -> t =
+   fun a b t -> { a = A.add a b t.a; b = B.add b a t.b }
 
-  (* Asymetric operations *)
-  module Key = struct
-    let mem : key -> t -> bool = fun k t -> KeyMap.mem k t.k
+  (** Asymetric operations from As to Bs *)
+  module FromA = struct
+    let mem : A.key -> t -> bool = fun a t -> A.mem a t.a
 
-    let find_opt : key -> t -> val_ option = fun k t -> KeyMap.find_opt k t.k
+    let find_opt : A.key -> t -> B.key option = fun a t -> A.find_opt a t.a
   end
 
-  module Val = struct
+  (** Asymetric operations from Bs to As *)
+  module FromB = struct
     type nonrec t = t
 
-    let mem : val_ -> t -> bool = fun v t -> ValMap.mem v t.v
+    let mem : B.key -> t -> bool = fun b t -> B.mem b t.b
 
-    let find_opt : val_ -> t -> key option = fun v t -> ValMap.find_opt v t.v
+    let find_opt : B.key -> t -> A.key option = fun b t -> B.find_opt b t.b
   end
 end

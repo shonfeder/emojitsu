@@ -2,12 +2,12 @@ open Bos_setup
 module EmojiMap = Bimap.Make (String) (String)
 
 let emap =
-  let add Emoji.{ string; name; _ } m = EmojiMap.add ~k:name ~v:string m in
+  let add Emoji.{ string; name; _ } m = EmojiMap.add name string m in
   List.fold_right add Github_table.v EmojiMap.empty
 
-let name_to_unicode name = EmojiMap.Key.find_opt name emap
+let name_to_unicode name = EmojiMap.FromA.find_opt name emap
 
-let unicode_to_name unicode = EmojiMap.Val.find_opt unicode emap
+let unicode_to_name unicode = EmojiMap.FromB.find_opt unicode emap
 
 let lookup ~f needle =
   f needle
