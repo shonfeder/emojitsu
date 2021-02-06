@@ -1,5 +1,5 @@
 # Adapted form https://github.com/avsm/hello-world-action-ocaml/blob/master/.github/workflows/workflow.yml
-name: Main workflow
+name: build
 
 on:
   - pull_request
