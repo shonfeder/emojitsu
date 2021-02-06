@@ -10,8 +10,8 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          # - macos-latest
           - ubuntu-latest
+          # - macos-latest
           # - windows-latest
         ocaml-version:
           - 4.11.0
@@ -19,7 +19,7 @@ jobs:
           # - 4.09.1
           # - 4.08.1
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout code
