@@ -36,10 +36,6 @@ jobs:
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
 
-      - run: opam pin add emojitsu.dev . --no-action
-
-      - run: opam depext emojitsu --yes --with-doc --with-test
-
       - run: opam install . --deps-only --with-doc --with-test
 
       - run: opam exec -- dune build
