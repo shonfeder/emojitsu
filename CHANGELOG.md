@@ -1,3 +1,7 @@
+## 0.0.6 (2020-02-05)
+
+- CI work and internal refactoring
+
 ## 0.0.5 (2020-02-04)
 
 - Remove `gen_github_emoji` as public executable
