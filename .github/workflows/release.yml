@@ -51,7 +51,7 @@ jobs:
       - name: Cut release
         run: |
           opam install dune-release
-          dune-release distrib
+          opam exec -- dune-release distrib
           version=$(git describe --tags --abbrev=0)
           mv _build/install/default/bin/emojitsu gh-actions-emojitsu
           hub create $version \
