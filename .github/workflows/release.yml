@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          depth: 0
 
       - name: Cache opam repository
         uses: actions/cache@v2
@@ -65,4 +67,4 @@ jobs:
             -a "_build/emojitsu-${version}.tbz" \
             -a gh-actions-emojitsu \
             -m "$version" \
-            -m $(git tag -l --format='%(contents)' "$version" | tail -n +3)
+            -m "$(git tag -l --format='%(contents)' "$version" | tail -n +3)"
