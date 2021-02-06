@@ -1,0 +1,60 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  strategy:
+    fail-fast: false
+    matrix:
+      os:
+        - ubuntu-latest
+        # - macos-latest
+        # - windows-latest
+    ocaml-version:
+      - 4.11.0
+        # - 4.10.1
+        # - 4.09.1
+        # - 4.08.1
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cache opam repository
+        uses: actions/cache@v2
+        with:
+          path: ~/.opam
+          key: ${{ runner.os }}-${{ hashFiles('*.opam') }}-${{ matrix.ocaml-version }}
+
+      - name: Use OCaml ${{ matrix.ocaml-version }}
+        uses: actions-ml/setup-ocaml@master
+        with:
+          ocaml-version: ${{ matrix.ocaml-version }}
+
+      - name: Install deps
+        run: opam install . --deps-only --with-doc --with-test
+
+      - name: Build release binary
+        run: |
+          opam exec -- dune test
+          opam exec -- dune build --profile release
+
+      - name: Cut release
+        run: |
+          opam install dune-release
+          dune-release distrib
+          version=$(git describe --tags --abbrev=0)
+          mv _build/install/default/bin/emojitsu gh-actions-emojitsu
+          hub create $version \
+            -a "_build/emojitsu-${version}.tbz" \
+            -a ./gh-actions-emojitsu \
+            -m "$version"
+            -m $(git tag -l --format='%(contents)' "$version" | tail -n +3)
