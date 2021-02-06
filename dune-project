@@ -26,18 +26,20 @@ Currently supports:
   ; dev
   (curly (and :with-test (>= 0.2.0)))
   (uutf (and :with-test (>= 1.0.2)))
+  (ppx_string (and :with-test (>= v0.14.0) (< v0.15.0)))
+  (yojson (and :with-test (>= 1.7.0) (< 1.8.0)))
+  (mdx (and :with-test (>= 1.7.0) (< 1.8.0)))
 
   ; libs
   (bos (and (>= 0.2.0) (< 0.3.0)))
   (re (and (>= 1.9.0) (< 1.10.0)))
-  (yojson (and (>= 1.7.0) (< 1.8.0)))
 
   ; preprocessors
   (ppx_deriving (and (>= 5.1) (< 6.0)))
   (ppx_expect (and (>= v0.14.0) (< v0.15.0)))
   (ppx_inline_test (and (>= v0.14.0) (< v0.15.0)))
-  (ppx_string (and (>= v0.14.0) (< v0.15.0)))
 
    ; pinned, see ./emojitsu.opam.template
   kwdcmd))
+
 (using mdx 0.1)

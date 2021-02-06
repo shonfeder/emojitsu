@@ -2,6 +2,8 @@
 
 _Tiny executable techniques for dealing with emoji_
 
+![build](https://github.com/shonfeder/emojitsu/workflows/build/badge.svg)
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 

@@ -19,13 +19,14 @@ depends: [
   "dune" {>= "2.7" & > "2.7"}
   "curly" {with-test & >= "0.2.0"}
   "uutf" {with-test & >= "1.0.2"}
+  "ppx_string" {with-test & >= "v0.14.0" & < "v0.15.0"}
+  "yojson" {with-test & >= "1.7.0" & < "1.8.0"}
+  "mdx" {with-test & >= "1.7.0" & < "1.8.0"}
   "bos" {>= "0.2.0" & < "0.3.0"}
   "re" {>= "1.9.0" & < "1.10.0"}
-  "yojson" {>= "1.7.0" & < "1.8.0"}
   "ppx_deriving" {>= "5.1" & < "6.0"}
   "ppx_expect" {>= "v0.14.0" & < "v0.15.0"}
   "ppx_inline_test" {>= "v0.14.0" & < "v0.15.0"}
-  "ppx_string" {>= "v0.14.0" & < "v0.15.0"}
   "kwdcmd"
   "odoc" {with-doc}
 ]
