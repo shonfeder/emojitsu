@@ -54,10 +54,9 @@ jobs:
 
           git config --global user.name "$GITHUB_ACTOR"
           git config --global user.email "github@actions.ci"
-          git fetch --tags
           version=$(git describe --tags --abbrev=0)
-
           echo $version
+
           opam install dune-release
           opam exec -- dune-release distrib --tag $version
 
