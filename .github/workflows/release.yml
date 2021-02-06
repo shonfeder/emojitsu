@@ -55,12 +55,11 @@ jobs:
           git config --global user.name "$GITHUB_ACTOR"
           git config --global user.email "github@actions.ci"
           version=$(git describe --tags --abbrev=0)
-          echo $version
 
           opam install dune-release
           opam exec -- dune-release distrib --tag $version
 
-          mv _build/install/default/bin/emojitsu gh-actions-emojitsu
+          mv _build/default/bin/main.exe gh-actions-emojitsu
 
           hub release create $version \
             -a "_build/emojitsu-${version}.tbz" \
