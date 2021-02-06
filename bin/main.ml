@@ -23,14 +23,15 @@ let () =
       @@ let+ file =
            Optional.pos
              "FILE"
-             ~doc:"File to read text from. If absent, read from stdout."
+             ~doc:"File to read text from. If absent, read from stdin."
              ~conv:Arg.(conv (Fpath.of_string, Fpath.pp))
              ~nth:0
              ()
          and+ inplace =
            Optional.flag
              ~flags:[ "i"; "inplace" ]
-             ~doc:"Emojify the input file in place."
+             ~doc:
+               "Emojify the input file in place. If abasent, print to stdout."
              ()
          in
          Lib.Github.emojify inplace file )
