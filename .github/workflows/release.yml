@@ -50,10 +50,16 @@ jobs:
 
       - name: Cut release
         run: |
+          git config --global user.name "$GITHUB_ACTOR"
+          git config --global user.email "github@actions.ci"
+          git fetch --tags
+          version=$(git describe --tags --abbrev=0)
+
           opam install dune-release
           opam exec -- dune-release distrib
-          version=$(git describe --tags --abbrev=0)
+
           mv _build/install/default/bin/emojitsu gh-actions-emojitsu
+
           hub release create $version \
             -a "_build/emojitsu-${version}.tbz" \
             -a ./gh-actions-emojitsu \
