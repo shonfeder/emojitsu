@@ -25,12 +25,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Cache opam repository
-        uses: actions/cache@v2
-        with:
-          path: ~/.opam
-          key: ${{ runner.os }}-${{ hashFiles('*.opam') }}-${{ matrix.ocaml-version }}
-
       - name: Use OCaml ${{ matrix.ocaml-version }}
         uses: actions-ml/setup-ocaml@master
         with:
