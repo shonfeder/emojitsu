@@ -5,18 +5,19 @@ _Tiny executable techniques for dealing with emoji_
 ![build](https://github.com/shonfeder/emojitsu/workflows/build/badge.svg)
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Emojitsu](#emojitsu)
-    - [Installation](#installation)
-    - [CLI Usage](#cli-usage)
-        - [Overview](#overview)
-        - [Examples](#examples)
-            - [Emojify file contents to stdout](#emojify-file-contents-to-stdout)
-            - [Emojify a file in place](#emojify-a-file-in-place)
-            - [Emojify from stdin](#emojify-from-stdin)
-            - [Look up the unicode emoji for a (GitHub) name](#look-up-the-unicode-emoji-for-a-github-name)
-            - [Look up the (GitHub) name for an emoji](#look-up-the-github-name-for-an-emoji)
+  - [Installation](#installation)
+  - [CLI Usage](#cli-usage)
+    - [Overview](#overview)
+    - [Examples](#examples)
+      - [Emojify file contents to stdout](#emojify-file-contents-to-stdout)
+      - [Emojify a file in place](#emojify-a-file-in-place)
+      - [Emojify from stdin](#emojify-from-stdin)
+      - [Look up the unicode emoji for a (GitHub) name](#look-up-the-unicode-emoji-for-a-github-name)
+      - [Look up the (GitHub) name for an emoji](#look-up-the-github-name-for-an-emoji)
 
 <!-- markdown-toc end -->
 
@@ -30,7 +31,7 @@ Using [opam](https://opam.ocaml.org/doc/Install.html):
 
 <!-- $MDX skip -->
 ```sh
-$ opam pin https://github.com/shonfeder/emojitsu.git#0.0.5
+$ opam pin https://github.com/shonfeder/emojitsu.git#0.0.6
 ```
 
 For Linux with x86 architecture, there is also a portable executable in the
