@@ -1,3 +1,7 @@
+## 0.0.7 (2020-02-09)
+
+- Add release script and update README
+
 ## 0.0.6 (2020-02-05)
 
 - CI work and internal refactoring
