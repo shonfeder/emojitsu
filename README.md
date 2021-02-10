@@ -34,9 +34,9 @@ Using [opam](https://opam.ocaml.org/doc/Install.html):
 $ opam pin https://github.com/shonfeder/emojitsu.git#0.0.6
 ```
 
-For Linux with x86 architecture, there is also a portable executable in the
-[releases](https://github.com/shonfeder/emojitsu/releases). This is intended for
-use in CI.
+For Linux with x86 architecture, there is also a (hopefully) portable executable
+in the [releases](https://github.com/shonfeder/emojitsu/releases). This is
+intended for use in CI. See [CI Usage](#ci-usage) for details.
 
 ## CLI Usage
 
@@ -123,3 +123,26 @@ $ emojitsu find-unicode black_flag
 $ emojitsu find-name ☮
 peace_symbol
 ```
+
+## CI Usage
+
+You can use emojitsu in your CI pipeline by installing from source. likely using
+opam.
+
+We also build binaries via the ubuntu GitHub runner and upload them with our
+releases. You can find the latest `gh-actions-emojitsu` binary in the
+
+You can use it in your CI pipeline like so:
+
+<!-- $MDX skip -->
+```sh
+# Install emojitsu
+wget --no-verbose https://github.com/shonfeder/emojitsu/releases/download/0.0.6/gh-actions-emojitsu
+chmod +x gh-actions-emojitsu
+
+# Emojify the markdown
+find . -type f -name "*.md" -exec ./gh-actions-emojitsu emojify -i {} \;
+```
+
+This has only been tested in other github runners any my own Think Pad running
+Manjero.
