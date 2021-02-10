@@ -5,19 +5,19 @@ _Tiny executable techniques for dealing with emoji_
 ![build](https://github.com/shonfeder/emojitsu/workflows/build/badge.svg)
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-
 **Table of Contents**
 
 - [Emojitsu](#emojitsu)
-  - [Installation](#installation)
-  - [CLI Usage](#cli-usage)
-    - [Overview](#overview)
-    - [Examples](#examples)
-      - [Emojify file contents to stdout](#emojify-file-contents-to-stdout)
-      - [Emojify a file in place](#emojify-a-file-in-place)
-      - [Emojify from stdin](#emojify-from-stdin)
-      - [Look up the unicode emoji for a (GitHub) name](#look-up-the-unicode-emoji-for-a-github-name)
-      - [Look up the (GitHub) name for an emoji](#look-up-the-github-name-for-an-emoji)
+    - [Installation](#installation)
+    - [CLI Usage](#cli-usage)
+        - [Overview](#overview)
+        - [Examples](#examples)
+            - [Emojify file contents to stdout](#emojify-file-contents-to-stdout)
+            - [Emojify a file in place](#emojify-a-file-in-place)
+            - [Emojify from stdin](#emojify-from-stdin)
+            - [Look up the unicode emoji for a (GitHub) name](#look-up-the-unicode-emoji-for-a-github-name)
+            - [Look up the (GitHub) name for an emoji](#look-up-the-github-name-for-an-emoji)
+    - [CI Usage](#ci-usage)
 
 <!-- markdown-toc end -->
 
