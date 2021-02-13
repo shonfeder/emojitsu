@@ -61,6 +61,11 @@ COMMANDS
        find-unicode
            Find the unicode of an emoji given its (GitHub) name
 
+       supports
+           A dummy subcommand for compatibility as an mdBook preprocessor.
+           See https://github.com/rust-lang/mdBook/issues/1462. This command
+           is a no-op and always exits with 0.
+
 OPTIONS
        --help[=FMT] (default=auto)
            Show this help in format FMT. The value FMT must be one of `auto',

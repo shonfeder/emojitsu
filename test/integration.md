@@ -25,3 +25,13 @@ $ emojitsu find-name asdoipjf
 error: No entry found for asdoipjf
 [1]
 ```
+
+## Compatibility with mdBook
+
+Exit with zero when calling dummy `supports` subcommand:
+
+```sh
+$ emojitsu supports FOO
+$ emojitsu supports BAR
+$ emojitsu supports
+```

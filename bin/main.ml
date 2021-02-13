@@ -35,4 +35,19 @@ let () =
              ()
          in
          Lib.Github.emojify inplace file )
+    ; cmd
+        ~name:"supports"
+        ~doc:
+          "A dummy subcommand for compatibility as an mdBook preprocessor. See \
+           https://github.com/rust-lang/mdBook/issues/1462. This command is a \
+           no-op and always exits with 0."
+        @@ let+ _arg =
+             Optional.pos
+               "FORMAT"
+               ~doc:"Dummy argument. It is unused."
+               ~conv:Arg.string
+               ~nth:0
+               ()
+        in
+        Ok ()
     ]
