@@ -31,7 +31,7 @@ Using [opam](https://opam.ocaml.org/doc/Install.html):
 
 <!-- $MDX skip -->
 ```sh
-$ opam pin https://github.com/shonfeder/emojitsu.git#0.1.0
+$ opam pin https://github.com/shonfeder/emojitsu.git#0.1.1
 ```
 
 For Linux with x86 architecture, there is also a (hopefully) portable executable
@@ -60,11 +60,6 @@ COMMANDS
 
        find-unicode
            Find the unicode of an emoji given its (GitHub) name
-
-       mdbook
-           Run the emojify command as an mdBook preprocessor. This is only
-           required because of un-unixy behavior on the part of mdBook. See
-           https://github.com/rust-lang/mdBook/issues/1462.
 
 OPTIONS
        --help[=FMT] (default=auto)
@@ -142,7 +137,7 @@ You can use it in your CI pipeline like so:
 <!-- $MDX skip -->
 ```sh
 # Install emojitsu
-wget --no-verbose https://github.com/shonfeder/emojitsu/releases/download/0.1.0/gh-actions-emojitsu
+wget --no-verbose https://github.com/shonfeder/emojitsu/releases/download/0.1.1/gh-actions-emojitsu
 chmod +x gh-actions-emojitsu
 
 # Emojify the markdown

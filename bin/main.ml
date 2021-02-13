@@ -1,13 +1,9 @@
 open Kwdcmd
 
-(* Workaround for mdBook preprocessor compatibility *)
-let mdbook _ignored_args =
-  Lib.Github.emojify false None
-
 let () =
   Exec.select
     ~name:"emojitsu"
-    ~version:"0.1.0"
+    ~version:"0.1.1"
     ~doc:"Techniques for dealing with emoji"
     [ ( cmd
           ~name:"find-name"
@@ -39,21 +35,4 @@ let () =
              ()
          in
          Lib.Github.emojify inplace file )
-    ; ( cmd
-          ~name:"mdbook"
-          ~doc:
-            "Run the emojify command as an mdBook preprocessor. This is only \
-             required because of un-unixy behavior on the part of mdBook. See \
-             https://github.com/rust-lang/mdBook/issues/1462."
-      @@ let+ args =
-           Optional.all_from
-             "ARGS"
-             ~doc:
-               "All args are ignored, but we must accept them to them to \
-                satisfy mdbook"
-             ~conv:Arg.string
-             ~nth:0
-             ()
-         in
-         mdbook args )
     ]
