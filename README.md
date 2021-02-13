@@ -61,10 +61,10 @@ COMMANDS
        find-unicode
            Find the unicode of an emoji given its (GitHub) name
 
-       supports
-           A dummy subcommand for compatibility as an mdBook preprocessor.
-           See https://github.com/rust-lang/mdBook/issues/1462. This command
-           is a no-op and always exits with 0.
+       mdbook
+           Run the emojify command as an mdBook preprocessor. This is only
+           required because of un-unixy behavior on the part of mdBook. See
+           https://github.com/rust-lang/mdBook/issues/1462.
 
 OPTIONS
        --help[=FMT] (default=auto)

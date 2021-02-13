@@ -26,12 +26,17 @@ error: No entry found for asdoipjf
 [1]
 ```
 
-## Compatibility with mdBook
+## Compatibility as an mdBook preprocessor
 
-Exit with zero when calling dummy `supports` subcommand:
+Exit with zero when called with `supports foo` args:
 
 ```sh
-$ emojitsu supports FOO
-$ emojitsu supports BAR
-$ emojitsu supports
+$ emojitsu mdbook suport FOO
+```
+
+Emojifies stdin when called with mdbook subcommand
+
+```sh
+$ echo ":duck:" | emojitsu mdbook
+🦆
 ```
