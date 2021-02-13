@@ -4,4 +4,5 @@ set -euo pipefail
 # TODO Automate version number update
 
 dune-release tag
+git push
 git push --tags
