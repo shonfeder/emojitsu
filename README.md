@@ -31,7 +31,7 @@ Using [opam](https://opam.ocaml.org/doc/Install.html):
 
 <!-- $MDX skip -->
 ```sh
-$ opam pin https://github.com/shonfeder/emojitsu.git#0.0.7
+$ opam pin https://github.com/shonfeder/emojitsu.git#0.1.0
 ```
 
 For Linux with x86 architecture, there is also a (hopefully) portable executable
@@ -142,7 +142,7 @@ You can use it in your CI pipeline like so:
 <!-- $MDX skip -->
 ```sh
 # Install emojitsu
-wget --no-verbose https://github.com/shonfeder/emojitsu/releases/download/0.0.7/gh-actions-emojitsu
+wget --no-verbose https://github.com/shonfeder/emojitsu/releases/download/0.1.0/gh-actions-emojitsu
 chmod +x gh-actions-emojitsu
 
 # Emojify the markdown

@@ -1,7 +1,7 @@
 (lang dune 2.7)
 
 (name emojitsu)
-(version 0.0.7)
+(version 0.1.0)
 
 (generate_opam_files true)
 

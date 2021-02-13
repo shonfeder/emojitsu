@@ -1,3 +1,9 @@
+## 0.1.0 (2020-02-12)
+
+### Features
+
+- Add dummy 'supports' command for mdBook preprocessor compatibility.
+
 ## 0.0.7 (2020-02-09)
 
 - Add release script and update README

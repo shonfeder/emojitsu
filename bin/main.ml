@@ -3,7 +3,7 @@ open Kwdcmd
 let () =
   Exec.select
     ~name:"emojitsu"
-    ~version:"0.0.7"
+    ~version:"0.1.0"
     ~doc:"Techniques for dealing with emoji"
     [ ( cmd
           ~name:"find-name"
