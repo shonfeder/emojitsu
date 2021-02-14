@@ -146,3 +146,45 @@ find . -type f -name "*.md" -exec ./gh-actions-emojitsu emojify -i {} \;
 
 This has only been tested in other github runners any my own Think Pad running
 Manjero.
+
+## Use with [mdBook](https://github.com/rust-lang/mdBook)
+
+You can use _emojitsu_ as a preprocessor for _mdBook_ by wrapping it in with a
+small bash script to account for mdBook's [idiosyncratic
+expectations](https://github.com/rust-lang/mdBook/issues/1462).
+
+In `./emojitsu-wrapper.sh`:
+
+<!-- $MDX skip -->
+```sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+jq -M -c .[1] <&0 | emojitsu emojify
+```
+
+_Explanation_ -- This script takes care of two thing:
+
+1. It ignores the CLI args _mdBook_ passes to preprocessors to test for formatting
+   support (which is not needed for _emojify_ to work its simple magic).
+2. It extracts the second element of the JSON array _mdBook_ sends to `stdin`,
+   which contains the book content.
+
+After you've made the wrapper executable --
+
+<!-- $MDX skip -->
+```sh
+chmod +x ./emojitsu-wrapper.sh
+```
+
+-- you can  use it in your _mdBook_ configuration by adding the following table
+to the `book.toml`:
+
+<!-- $MDX skip -->
+```conf
+# snip
+
+[preprocessor.emojify]
+
+command = "./emojitsu-wrapper.sh"
+```
