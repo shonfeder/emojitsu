@@ -18,6 +18,7 @@ _Tiny executable techniques for dealing with emoji_
             - [Look up the unicode emoji for a (GitHub) name](#look-up-the-unicode-emoji-for-a-github-name)
             - [Look up the (GitHub) name for an emoji](#look-up-the-github-name-for-an-emoji)
     - [CI Usage](#ci-usage)
+    - [Use with mdBook](#use-with-mdbook)
 
 <!-- markdown-toc end -->
 
@@ -147,9 +148,9 @@ find . -type f -name "*.md" -exec ./gh-actions-emojitsu emojify -i {} \;
 This has only been tested in other github runners any my own Think Pad running
 Manjero.
 
-## Use with [mdBook](https://github.com/rust-lang/mdBook)
+## Use with mdBook
 
-You can use _emojitsu_ as a preprocessor for _mdBook_ by wrapping it in with a
+You can use _emojitsu_ as a preprocessor for [mdBook][] by wrapping it in with a
 small bash script to account for mdBook's [idiosyncratic
 expectations](https://github.com/rust-lang/mdBook/issues/1462).
 
@@ -188,3 +189,5 @@ to the `book.toml`:
 
 command = "./emojitsu-wrapper.sh"
 ```
+
+[mdBook]: https://github.com/rust-lang/mdBook
