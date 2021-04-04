@@ -132,6 +132,7 @@ opam.
 
 We also build binaries via the ubuntu GitHub runner and upload them with our
 releases. You can find the latest `gh-actions-emojitsu` binary in the
+[releases][].
 
 You can use it in your CI pipeline like so:
 
@@ -191,3 +192,4 @@ command = "./emojitsu-wrapper.sh"
 ```
 
 [mdBook]: https://github.com/rust-lang/mdBook
+[releases]: https://github.com/shonfeder/emojitsu/releases
